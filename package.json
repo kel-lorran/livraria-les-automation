@@ -1,0 +1,20 @@
+{
+  "name": "Automacao_Livraria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.7",
+    "cypress": "^6.8.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^1.6.2"
+  }
+}
