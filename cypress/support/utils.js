@@ -4,13 +4,14 @@ Cypress.Commands.add('fillForm', fieldMap => {
 
         switch (type) {
             case 'select':
-                let randoChildIndex = -1;
+                let randomChildIndex = -1;
                 cy.get(`*[name="${name}"] + .options > *`).each((e, i, { length }) => {
-                    if (randoChildIndex < 0)
-                        randoChildIndex = Math.floor(Math.random() * 100) % length;
-                    if (i === randoChildIndex)
-                        console.log('select option ' + randoChildIndex);
+                    if (randomChildIndex < 0)
+                        randomChildIndex = Math.floor(Math.random() * 100) % length;
+                    if (i === randomChildIndex) {
+                        console.log('select option ' + randomChildIndex);
                         cy.wrap(e).click({ force: true });
+                    }
                 });
                 break;
         
@@ -27,7 +28,7 @@ Cypress.Commands.add('fillForm', fieldMap => {
 Cypress.Commands.add('navigateByHeaderLinks', (destiny) => {
     switch (destiny) {
         case 'home':
-            cy.intercept('/merchandise/active').as('getCatalog');
+            cy.intercept('/merchandise/search').as('getCatalog');
             cy.get('header a img.logo').click({ force: true });
             cy.wait('@getCatalog');
             break;

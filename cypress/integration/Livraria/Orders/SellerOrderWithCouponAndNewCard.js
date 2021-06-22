@@ -37,7 +37,7 @@ describe('Make order with two credit cards and coupons', () => {
 
     it('Insert cupons', () => {
         cy.navigateByHeaderLinks('profile');
-        cy.useCupons({ promocionalCoupon: [] });
+        cy.useCupons({ promocionalCoupon: [516145557] });
     });
 
     it('Should be in /cesta-produtos page', () => {
